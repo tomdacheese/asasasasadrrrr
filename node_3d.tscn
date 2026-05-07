@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dpjljhe8csxd6" path="res://node_3d.gd" id="1_a202f"]
 [ext_resource type="Script" uid="uid://rrxngv5lrj3k" path="res://character_body_3d.gd" id="2_noarx"]
-[ext_resource type="PackedScene" uid="uid://djae6rpxg51lv" path="res://provagiocounito.glb" id="3_a0tk4"]
+[ext_resource type="PackedScene" uid="uid://b5x8ld4brdjbe" path="res://provagiocounito.tscn" id="3_a0tk4"]
 
 [sub_resource type="Environment" id="Environment_noarx"]
 background_mode = 1
@@ -32,4 +32,4 @@ use_collision = true
 size = Vector3(6, 0.15557861, 11.640137)
 
 [node name="provagiocounito" parent="." unique_id=1020685864 instance=ExtResource("3_a0tk4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23206615, 0, -3.302834)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7104864, 0, -7.187091)

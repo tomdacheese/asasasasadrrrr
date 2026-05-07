@@ -4,10 +4,136 @@
 [ext_resource type="PackedScene" uid="uid://c6twlertloifp" path="res://materasso1.glb" id="2_cw70i"]
 [ext_resource type="PackedScene" uid="uid://5xfc4jdfs2c5" path="res://cuscino.glb" id="3_akv5t"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mvs6w"]
+size = Vector3(2, 2.0963726, 1.9047619)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cw70i"]
+size = Vector3(2, 24.23803, 0.09523809)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_akv5t"]
+size = Vector3(2.3214688, 1.7066257, 29.838608)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6sgfi"]
+size = Vector3(2.6976132, 1.454215, 4.557083)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tcfcc"]
+size = Vector3(2.6976132, 1.454215, 4.557083)
+
+[sub_resource type="Animation" id="Animation_mvs6w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.68149877, 3.1415925, -7.091239e-08)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.4425144, 3.0716264, -7.2054973)]
+}
+
+[sub_resource type="Animation" id="Animation_cw70i"]
+resource_name = "alzata"
+length = 4.233333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.102288, 1.4805714, 2.4040046, 3.1589546, 4.133333),
+"transitions": PackedFloat32Array(1, 1.9318818, 1.9318818, 1.7411013, 1, 1.4640857),
+"update": 0,
+"values": [Vector3(0.68149877, 3.1415925, -7.091239e-08), Vector3(-0.016807515, 3.1415925, 2.6179743e-08), Vector3(-0.016807515, 3.1415925, 2.6179743e-08), Vector3(-0.017453292, 4.5622907, 0), Vector3(-0.62831855, 4.6896996, -0.054105207), Vector3(0.045378562, 4.6670103, -0.033161256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.102288, 1.4805714, 2.392288, 3.1456873, 4.133333),
+"transitions": PackedFloat32Array(1, 1.9318818, 1.9318818, 1.7411013, 1, 1.4640857),
+"update": 0,
+"values": [Vector3(-7.4425144, 3.0716264, -7.2054973), Vector3(-7.4425144, 4.05165, -5.728529), Vector3(-7.4425144, 4.05165, -5.728529), Vector3(-6.883342, 4.05165, -5.6165566), Vector3(-6.2668676, 3.9257455, -5.62474), Vector3(-4.187, 4.375, -5.625)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_akv5t"]
+_data = {
+&"RESET": SubResource("Animation_mvs6w"),
+&"alzata": SubResource("Animation_cw70i")
+}
+
 [node name="provagiocounito" unique_id=1020685864 instance=ExtResource("1_mvs6w")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" parent_id_path=PackedInt32Array(834849369) index="0" unique_id=1425043118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.119015, -0.047619045)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0" unique_id=117170992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.070833, 0)
+shape = SubResource("BoxShape3D_mvs6w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001" parent_id_path=PackedInt32Array(657923793) index="0" unique_id=1186076313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.373003, -1.7881393e-07)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D" index="0" unique_id=1009219665]
+shape = SubResource("BoxShape3D_cw70i")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cube_001/StaticBody3D" index="1" unique_id=436545743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8987882)
+shape = SubResource("BoxShape3D_cw70i")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cube_001/StaticBody3D" index="2" unique_id=1751435792]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9544438, 0, -0.9597391)
+shape = SubResource("BoxShape3D_cw70i")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Cube_001/StaticBody3D" index="3" unique_id=740420125]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.961575, 0, -0.9597391)
+shape = SubResource("BoxShape3D_cw70i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_003" parent_id_path=PackedInt32Array(1981381816) index="0" unique_id=314482358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018517613, 0.4126804, -13.919304)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_003/StaticBody3D" index="0" unique_id=1721821252]
+transform = Transform3D(1.0000007, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55936754, 0)
+shape = SubResource("BoxShape3D_akv5t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_002" parent_id_path=PackedInt32Array(918581739) index="0" unique_id=850638823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.08709574)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="0" unique_id=1812805678]
+shape = SubResource("BoxShape3D_6sgfi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_004" parent_id_path=PackedInt32Array(2055865683) index="0" unique_id=1008158476]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_004/StaticBody3D" index="0" unique_id=1190679541]
+shape = SubResource("BoxShape3D_tcfcc")
 
 [node name="materasso1" parent="." index="6" unique_id=1074359696 instance=ExtResource("2_cw70i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.357664, -1.1374885, -6.415177)
 
 [node name="cuscino" parent="." index="7" unique_id=1280105226 instance=ExtResource("3_akv5t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.971615, -0.8333143, -7.996256)
+
+[node name="Camera3D" type="Camera3D" parent="." index="8" unique_id=1571409630]
+transform = Transform3D(-0.9999999, 2.420858e-08, 1.172678e-07, -5.5072643e-08, 0.7766294, -0.6299578, -1.0632398e-07, -0.6299577, -0.77662957, -7.4425144, 3.0716264, -7.2054973)
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D" index="0" unique_id=618288135]
+libraries/ = SubResource("AnimationLibrary_akv5t")

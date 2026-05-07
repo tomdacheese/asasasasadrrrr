@@ -1,30 +1,19 @@
 [gd_scene format=3 uid="uid://db815se06ht37"]
 
 [ext_resource type="Script" uid="uid://dpjljhe8csxd6" path="res://node_3d.gd" id="1_a202f"]
-[ext_resource type="Script" uid="uid://rrxngv5lrj3k" path="res://character_body_3d.gd" id="2_noarx"]
 [ext_resource type="PackedScene" uid="uid://b5x8ld4brdjbe" path="res://provagiocounito.tscn" id="3_a0tk4"]
+[ext_resource type="PackedScene" uid="uid://7yqkf6dk2v3c" path="res://player.tscn" id="3_r3fl7"]
 
 [sub_resource type="Environment" id="Environment_noarx"]
 background_mode = 1
-background_color = Color(0.56078434, 0.7764706, 1, 1)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a0tk4"]
+background_color = Color(0, 0.19988403, 0.36428592, 1)
+ambient_light_energy = 3.12
 
 [node name="Node3D" type="Node3D" unique_id=158877942]
 script = ExtResource("1_a202f")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1727201400]
 environment = SubResource("Environment_noarx")
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=491890021]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32471597, 1.9987334, 0)
-script = ExtResource("2_noarx")
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=566113918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003636241, 0.52566963, -0.54406965)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=865228299]
-shape = SubResource("CapsuleShape3D_a0tk4")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=583699548]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.02444458, 17.028347)
@@ -33,3 +22,17 @@ size = Vector3(6, 0.15557861, 11.640137)
 
 [node name="provagiocounito" parent="." unique_id=1020685864 instance=ExtResource("3_a0tk4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7104864, 0, -7.5110173)
+
+[node name="Camera3D" parent="provagiocounito" index="8" unique_id=1571409630]
+transform = Transform3D(-0.9999998, 2.4208578e-08, 1.172678e-07, -5.507264e-08, 0.7766293, -0.6299578, -1.06323974e-07, -0.6299577, -0.77662957, -7.4425144, 3.0716264, -7.2054973)
+
+[node name="CharacterBody3D" parent="." unique_id=2021512927 instance=ExtResource("3_r3fl7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.8949375, 1.582403, -13.104123)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1566026572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.487186, 6.650813, -11.986175)
+omni_range = 118.881
+omni_attenuation = 0.556
+
+[editable path="provagiocounito"]
+[editable path="CharacterBody3D"]

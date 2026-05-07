@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 # --- Variabili per il movimento ---
-const SPEED = 4.0
+const SPEED = 5.5
 const JUMP_VELOCITY = 4.5
 
 # --- Variabili per la visuale ---

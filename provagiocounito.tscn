@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b5x8ld4brdjbe"]
+
+[ext_resource type="PackedScene" uid="uid://djae6rpxg51lv" path="res://provagiocounito.glb" id="1_mvs6w"]
+[ext_resource type="PackedScene" uid="uid://c6twlertloifp" path="res://materasso1.glb" id="2_cw70i"]
+[ext_resource type="PackedScene" uid="uid://5xfc4jdfs2c5" path="res://cuscino.glb" id="3_akv5t"]
+
+[node name="provagiocounito" unique_id=1020685864 instance=ExtResource("1_mvs6w")]
+
+[node name="materasso1" parent="." index="6" unique_id=1074359696 instance=ExtResource("2_cw70i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.357664, -1.1374885, -6.415177)
+
+[node name="cuscino" parent="." index="7" unique_id=1280105226 instance=ExtResource("3_akv5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.971615, -0.8333143, -7.996256)

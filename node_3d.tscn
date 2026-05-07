@@ -2,5 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dpjljhe8csxd6" path="res://node_3d.gd" id="1_a202f"]
 
+[sub_resource type="Environment" id="Environment_noarx"]
+background_mode = 1
+background_color = Color(0.56078434, 0.7764706, 1, 1)
+
 [node name="Node3D" type="Node3D" unique_id=158877942]
 script = ExtResource("1_a202f")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=566113918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003636241, 0, 2.1452534)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1727201400]
+environment = SubResource("Environment_noarx")

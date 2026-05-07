@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="asasasasadrrrr"
+run/main_scene="uid://db815se06ht37"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

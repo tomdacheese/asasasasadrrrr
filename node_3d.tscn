@@ -1,16 +1,31 @@
 [gd_scene format=3 uid="uid://db815se06ht37"]
 
 [ext_resource type="Script" uid="uid://dpjljhe8csxd6" path="res://node_3d.gd" id="1_a202f"]
+[ext_resource type="Script" uid="uid://rrxngv5lrj3k" path="res://character_body_3d.gd" id="2_noarx"]
 
 [sub_resource type="Environment" id="Environment_noarx"]
 background_mode = 1
 background_color = Color(0.56078434, 0.7764706, 1, 1)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a0tk4"]
+
 [node name="Node3D" type="Node3D" unique_id=158877942]
 script = ExtResource("1_a202f")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=566113918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003636241, 0, 2.1452534)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1727201400]
 environment = SubResource("Environment_noarx")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=491890021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32471597, 1.9987334, 0)
+script = ExtResource("2_noarx")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=566113918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003636241, 0.52566963, -0.54406965)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=865228299]
+shape = SubResource("CapsuleShape3D_a0tk4")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=583699548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.02444458, -3.2751465)
+use_collision = true
+size = Vector3(6, 0.15557861, 11.640137)

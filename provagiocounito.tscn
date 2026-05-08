@@ -80,6 +80,94 @@ _data = {
 &"alzata": SubResource("Animation_cw70i")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_mvs6w"]
+font_size = 56
+
+[sub_resource type="Animation" id="Animation_akv5t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6sgfi"]
+resource_name = "new_animation"
+length = 3.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.5666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.5666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tcfcc"]
+_data = {
+&"RESET": SubResource("Animation_akv5t"),
+&"new_animation": SubResource("Animation_6sgfi")
+}
+
 [node name="provagiocounito" unique_id=1020685864 instance=ExtResource("1_mvs6w")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube" parent_id_path=PackedInt32Array(834849369) index="0" unique_id=1425043118]
@@ -137,3 +225,29 @@ current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D" index="0" unique_id=618288135]
 libraries/ = SubResource("AnimationLibrary_akv5t")
+
+[node name="ColorRect" type="ColorRect" parent="." index="9" unique_id=804747631]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." index="10" unique_id=1450293832]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -38.5
+offset_right = 79.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "DAY 1"
+label_settings = SubResource("LabelSettings_mvs6w")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="11" unique_id=1885667476]
+libraries/ = SubResource("AnimationLibrary_tcfcc")

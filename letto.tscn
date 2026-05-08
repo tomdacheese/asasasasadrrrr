@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dktd3ohsrjw16" path="res://WOOD-FLOORS-Parquet-Textures-ARCHITECTURE-parquet-flooring-texture-seamless-BPR-material-High-Resolution-Free-Download-substances-4k-full-1368x1368.jpg.webp" id="2_fgxsd"]
 [ext_resource type="Texture2D" uid="uid://db4lupw5sfo2i" path="res://360_F_297098515_noDOtzUeSdCKRTnZQjgMc3rNmHeMIKrw.jpg" id="3_d1cxv"]
 [ext_resource type="PackedScene" uid="uid://7yqkf6dk2v3c" path="res://player.tscn" id="4_58myd"]
+[ext_resource type="PackedScene" uid="uid://xk5kkkkhk6it" path="res://porta.glb" id="5_d1cxv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mg5t1"]
 resource_name = "Material.002"
@@ -113,8 +114,10 @@ uv1_scale = Vector3(1, 2, 2)
 albedo_color = Color(0.35566562, 0.15736032, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m677k"]
-albedo_color = Color(0, 0.5941629, 0.8780701, 1)
+albedo_color = Color(0.2509804, 0.5176471, 0.6039216, 1)
 albedo_texture = ExtResource("3_d1cxv")
+
+[sub_resource type="Environment" id="Environment_d1cxv"]
 
 [node name="Node3D" type="Node3D" unique_id=737960566]
 
@@ -182,10 +185,16 @@ size = Vector3(0.44248962, 0.7357788, 17.946732)
 material = SubResource("StandardMaterial3D_kkjyl")
 
 [node name="DEMOLIZIONE" type="CSGBox3D" parent="DEMOLIZIONECOMBINAZIONE" unique_id=1791312337]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.509672, 1.1654968, 17.257483)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.563936, 1.5974121, 17.257483)
 operation = 2
-size = Vector3(1, 4.6557617, 2.7907562)
+size = Vector3(1, 5.5195923, 2.8992844)
 material = SubResource("StandardMaterial3D_m677k")
 
 [node name="CharacterBody3D" parent="." unique_id=2021512927 instance=ExtResource("4_58myd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.103649, -1.0143027, 3.7367363)
+
+[node name="porta" parent="." unique_id=1220543389 instance=ExtResource("5_d1cxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2698946, 0.42786717, 17.694298)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1454561824]
+environment = SubResource("Environment_d1cxv")

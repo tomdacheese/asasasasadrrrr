@@ -1,14 +1,14 @@
 [gd_scene format=4 uid="uid://c74fsqbm2lisl"]
 
-[ext_resource type="PackedScene" uid="uid://c6twlertloifp" path="res://materasso1.glb" id="1_00ejh"]
-[ext_resource type="Script" path="res://letto.gd" id="1_58myd"]
-[ext_resource type="Texture2D" uid="uid://dktd3ohsrjw16" path="res://WOOD-FLOORS-Parquet-Textures-ARCHITECTURE-parquet-flooring-texture-seamless-BPR-material-High-Resolution-Free-Download-substances-4k-full-1368x1368.jpg.webp" id="2_fgxsd"]
-[ext_resource type="Texture2D" uid="uid://db4lupw5sfo2i" path="res://360_F_297098515_noDOtzUeSdCKRTnZQjgMc3rNmHeMIKrw.jpg" id="3_d1cxv"]
-[ext_resource type="PackedScene" uid="uid://7yqkf6dk2v3c" path="res://player.tscn" id="4_58myd"]
-[ext_resource type="PackedScene" uid="uid://xk5kkkkhk6it" path="res://porta.glb" id="5_d1cxv"]
-[ext_resource type="Texture2D" uid="uid://bbatcpbhnfotm" path="res://locandina.jpg" id="5_kkjyl"]
-[ext_resource type="Script" path="res://porta.gd" id="7_ctail"]
-[ext_resource type="Script" path="res://porta_area.gd" id="8_wp12p"]
+[ext_resource type="Script" uid="uid://exwknpqvck4y" path="res://letto.gd" id="1_rtfej"]
+[ext_resource type="PackedScene" uid="uid://c6twlertloifp" path="res://materasso1.glb" id="2_auvgu"]
+[ext_resource type="Texture2D" uid="uid://dktd3ohsrjw16" path="res://WOOD-FLOORS-Parquet-Textures-ARCHITECTURE-parquet-flooring-texture-seamless-BPR-material-High-Resolution-Free-Download-substances-4k-full-1368x1368.jpg.webp" id="3_bwg5h"]
+[ext_resource type="Texture2D" uid="uid://db4lupw5sfo2i" path="res://360_F_297098515_noDOtzUeSdCKRTnZQjgMc3rNmHeMIKrw.jpg" id="4_61ger"]
+[ext_resource type="Texture2D" uid="uid://bbatcpbhnfotm" path="res://locandina.jpg" id="5_r2x8m"]
+[ext_resource type="PackedScene" uid="uid://7yqkf6dk2v3c" path="res://player.tscn" id="6_v47nu"]
+[ext_resource type="PackedScene" uid="uid://xk5kkkkhk6it" path="res://porta.glb" id="7_dfcyd"]
+[ext_resource type="Script" uid="uid://dawnftgbc1614" path="res://porta.gd" id="8_hmwvr"]
+[ext_resource type="Script" uid="uid://bnayafg4k5eq6" path="res://porta_area.gd" id="9_lisie"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mg5t1"]
 resource_name = "Material.002"
@@ -106,12 +106,12 @@ shadow_mesh = SubResource("ArrayMesh_r52d1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctail"]
 albedo_color = Color(0.48560983, 0.48560983, 0.48560983, 1)
-albedo_texture = ExtResource("2_fgxsd")
+albedo_texture = ExtResource("3_bwg5h")
 uv1_scale = Vector3(4, 4, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wp12p"]
 albedo_color = Color(0.2516992, 0.51581085, 0.6035553, 1)
-albedo_texture = ExtResource("3_d1cxv")
+albedo_texture = ExtResource("4_61ger")
 uv1_scale = Vector3(1, 2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkjyl"]
@@ -119,7 +119,7 @@ albedo_color = Color(0.35566562, 0.15736032, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m677k"]
 albedo_color = Color(0.2509804, 0.5176471, 0.6039216, 1)
-albedo_texture = ExtResource("3_d1cxv")
+albedo_texture = ExtResource("4_61ger")
 
 [sub_resource type="Environment" id="Environment_d1cxv"]
 
@@ -276,13 +276,13 @@ _data = {
 size = Vector3(3.0452576, 5.31604, 3.081421)
 
 [node name="Node3D" type="Node3D" unique_id=737960566]
-script = ExtResource("1_58myd")
+script = ExtResource("1_rtfej")
 
 [node name="Cube_003" type="MeshInstance3D" parent="." unique_id=1405125477]
 transform = Transform3D(1.5599558, 0, 0, 0, 1, 0, 0, 0, -0.18148828, 0.5837517, 0, 0.39769983)
 mesh = SubResource("ArrayMesh_8a2k1")
 
-[node name="materasso1" parent="Cube_003" unique_id=1212272159 instance=ExtResource("1_00ejh")]
+[node name="materasso1" parent="Cube_003" unique_id=1212272159 instance=ExtResource("2_auvgu")]
 transform = Transform3D(0.64104384, 0, 0, 0, 1, 0, 0, 0, -5.509998, -0.022941561, -2.5575485, -13.304582)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=81519475]
@@ -336,7 +336,7 @@ material = SubResource("StandardMaterial3D_kkjyl")
 [node name="Sprite3D" type="Sprite3D" parent="CSGBox3D4" unique_id=1381688460]
 transform = Transform3D(-0.42774275, -0.124170944, 8.476783e-08, -0.15629461, 0.33982757, 1.5001776e-08, -3.860353e-08, -5.4276836e-09, -1, 3.9848156, 1.1332502, 9.012356)
 shaded = true
-texture = ExtResource("5_kkjyl")
+texture = ExtResource("5_r2x8m")
 
 [node name="DEMOLIZIONECOMBINAZIONE" type="CSGCombiner3D" parent="." unique_id=1612768131]
 use_collision = true
@@ -359,14 +359,14 @@ operation = 2
 size = Vector3(1, 5.5195923, 2.8992844)
 material = SubResource("StandardMaterial3D_m677k")
 
-[node name="player" parent="." unique_id=2021512927 groups=["player"] instance=ExtResource("4_58myd")]
+[node name="player" parent="." unique_id=2021512927 groups=["player"] instance=ExtResource("6_v47nu")]
 transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 2.8765264, -0.05488801, 3.7939959)
 
-[node name="porta" parent="." unique_id=1220543389 instance=ExtResource("5_d1cxv")]
+[node name="porta" parent="." unique_id=1220543389 instance=ExtResource("7_dfcyd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2698946, 0.42786717, 17.694298)
-script = ExtResource("7_ctail")
+script = ExtResource("8_hmwvr")
 
-[node name="AnimationPlayer" parent="porta" index="11" unique_id=1035110732]
+[node name="AnimationPlayer" parent="porta" index="11" unique_id=1003964411]
 speed_scale = 1.577
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1454561824]
@@ -415,7 +415,7 @@ libraries/ = SubResource("AnimationLibrary_akv5t")
 
 [node name="PortaArea" type="Area3D" parent="." unique_id=1255699879]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6536913, 0, 15.368264)
-script = ExtResource("8_wp12p")
+script = ExtResource("9_lisie")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PortaArea" unique_id=699295986]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07518005, 1.59552, 0.22528076)

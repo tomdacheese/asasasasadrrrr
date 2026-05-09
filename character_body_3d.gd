@@ -7,6 +7,8 @@ const JUMP_VELOCITY = 4.5
 # --- Variabili per la visuale ---
 @export var mouse_sensitivity := 0.003
 @onready var camera: Camera3D = $Camera3D # Assicurati che il nodo Camera3D si chiami così
+@onready var label: Label = $Label
+var inter = null
 
 func _ready():
 	# Cattura il mouse e lo nasconde al centro della finestra
@@ -45,3 +47,18 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	
+func attiva_UI(oggetto):
+	label.visible = true
+	inter = oggetto
+	
+func disattiva_UI():
+	label.visible = false
+	inter = null
+	
+	
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("INTERACT"):
+		if inter != null:
+			inter.interact()

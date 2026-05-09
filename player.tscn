@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://7yqkf6dk2v3c"]
 
 [ext_resource type="Script" uid="uid://rrxngv5lrj3k" path="res://character_body_3d.gd" id="1_4flbx"]
+[ext_resource type="FontFile" uid="uid://bfkynlx3mbv4m" path="res://Times New Normal Regular.ttf" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a0tk4"]
 radius = 0.78125
 height = 4.1083984
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=2021512927]
+[sub_resource type="LabelSettings" id="LabelSettings_4flbx"]
+font = ExtResource("2_onrkg")
+font_size = 26
+
+[node name="player" type="CharacterBody3D" unique_id=2021512927]
 script = ExtResource("1_4flbx")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1176484953]
@@ -15,3 +20,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03371513, 2.8389738, -0.97
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=43074608]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.753418, 0)
 shape = SubResource("CapsuleShape3D_a0tk4")
+
+[node name="Label" type="Label" parent="." unique_id=428822172]
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 188.0
+offset_right = 88.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PRESS [E] TO INTERACT"
+label_settings = SubResource("LabelSettings_4flbx")

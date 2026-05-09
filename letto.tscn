@@ -1,10 +1,13 @@
 [gd_scene format=4 uid="uid://c74fsqbm2lisl"]
 
 [ext_resource type="PackedScene" uid="uid://c6twlertloifp" path="res://materasso1.glb" id="1_00ejh"]
+[ext_resource type="Script" uid="uid://exwknpqvck4y" path="res://letto.gd" id="1_58myd"]
 [ext_resource type="Texture2D" uid="uid://dktd3ohsrjw16" path="res://WOOD-FLOORS-Parquet-Textures-ARCHITECTURE-parquet-flooring-texture-seamless-BPR-material-High-Resolution-Free-Download-substances-4k-full-1368x1368.jpg.webp" id="2_fgxsd"]
 [ext_resource type="Texture2D" uid="uid://db4lupw5sfo2i" path="res://360_F_297098515_noDOtzUeSdCKRTnZQjgMc3rNmHeMIKrw.jpg" id="3_d1cxv"]
 [ext_resource type="PackedScene" uid="uid://7yqkf6dk2v3c" path="res://player.tscn" id="4_58myd"]
 [ext_resource type="PackedScene" uid="uid://xk5kkkkhk6it" path="res://porta.glb" id="5_d1cxv"]
+[ext_resource type="Script" uid="uid://dawnftgbc1614" path="res://porta.gd" id="7_ctail"]
+[ext_resource type="Script" uid="uid://bnayafg4k5eq6" path="res://porta_area.gd" id="8_wp12p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mg5t1"]
 resource_name = "Material.002"
@@ -119,7 +122,160 @@ albedo_texture = ExtResource("3_d1cxv")
 
 [sub_resource type="Environment" id="Environment_d1cxv"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ctail"]
+font_size = 56
+
+[sub_resource type="Animation" id="Animation_akv5t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6sgfi"]
+resource_name = "new_animation"
+length = 3.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.5666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.5666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wp12p"]
+_data = {
+&"RESET": SubResource("Animation_akv5t"),
+&"new_animation": SubResource("Animation_6sgfi")
+}
+
+[sub_resource type="Animation" id="Animation_mvs6w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.68149877, 3.1415925, -7.091239e-08)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.4425144, 3.0716264, -7.2054973)]
+}
+
+[sub_resource type="Animation" id="Animation_cw70i"]
+resource_name = "alzata"
+length = 4.233333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.102288, 1.4805714, 2.4040046, 3.1589546, 4.133333),
+"transitions": PackedFloat32Array(1, 1.9318818, 1.9318818, 1.7411013, 1, 1.4640857),
+"update": 0,
+"values": [Vector3(0.68149877, 3.1415925, -7.091239e-08), Vector3(-0.016807515, 3.1415925, 2.6179743e-08), Vector3(-0.016807515, 3.1415925, 2.6179743e-08), Vector3(-0.017453292, 4.5622907, 0), Vector3(-0.62831855, 4.6896996, -0.054105207), Vector3(0.045378562, 4.6670103, -0.033161256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.102288, 1.4805714, 2.392288, 3.1456873, 4.133333),
+"transitions": PackedFloat32Array(1, 1.9318818, 1.9318818, 1.7411013, 1, 1.4640857),
+"update": 0,
+"values": [Vector3(-7.4425144, 3.0716264, -7.2054973), Vector3(-7.4425144, 4.05165, -5.728529), Vector3(-7.4425144, 4.05165, -5.728529), Vector3(-6.883342, 4.05165, -5.6165566), Vector3(-6.2668676, 3.9257455, -5.62474), Vector3(-4.187, 4.375, -5.625)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_akv5t"]
+_data = {
+&"RESET": SubResource("Animation_mvs6w"),
+&"alzata": SubResource("Animation_cw70i")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_58myd"]
+size = Vector3(3.0452576, 5.31604, 3.081421)
+
 [node name="Node3D" type="Node3D" unique_id=737960566]
+script = ExtResource("1_58myd")
 
 [node name="Cube_003" type="MeshInstance3D" parent="." unique_id=1405125477]
 transform = Transform3D(1.5599558, 0, 0, 0, 1, 0, 0, 0, -0.18148828, 0.5837517, 0, 0.39769983)
@@ -130,6 +286,12 @@ transform = Transform3D(0.64104384, 0, 0, 0, 1, 0, 0, 0, -5.509998, -0.022941561
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=81519475]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.288208, -1.1129966, 8.475708)
+use_collision = true
+size = Vector3(18.670654, 0.1973877, 17.951416)
+material = SubResource("StandardMaterial3D_ctail")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=610654483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.288208, 7.2762747, 8.475708)
 use_collision = true
 size = Vector3(18.670654, 0.1973877, 17.951416)
 material = SubResource("StandardMaterial3D_ctail")
@@ -171,6 +333,7 @@ size = Vector3(0.44248962, 0.7357788, 17.946732)
 material = SubResource("StandardMaterial3D_kkjyl")
 
 [node name="DEMOLIZIONECOMBINAZIONE" type="CSGCombiner3D" parent="." unique_id=1612768131]
+use_collision = true
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="DEMOLIZIONECOMBINAZIONE" unique_id=560445347]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.251646, 3.1748047, 17.258024)
@@ -190,11 +353,70 @@ operation = 2
 size = Vector3(1, 5.5195923, 2.8992844)
 material = SubResource("StandardMaterial3D_m677k")
 
-[node name="CharacterBody3D" parent="." unique_id=2021512927 instance=ExtResource("4_58myd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.103649, -1.0143027, 3.7367363)
+[node name="player" parent="." unique_id=2021512927 groups=["player"] instance=ExtResource("4_58myd")]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 2.8765264, -0.05488801, 3.7939959)
 
 [node name="porta" parent="." unique_id=1220543389 instance=ExtResource("5_d1cxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2698946, 0.42786717, 17.694298)
+script = ExtResource("7_ctail")
+
+[node name="AnimationPlayer" parent="porta" index="11" unique_id=1003964411]
+speed_scale = 1.577
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1454561824]
 environment = SubResource("Environment_d1cxv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=973639885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5919685, 2.508637, 7.9982195)
+omni_range = 833.409
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1228020823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.039019, -1.6164082, 9.363337)
+
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=734597340]
+transform = Transform3D(-1, 2.4208582e-08, 1.1726779e-07, -5.507265e-08, 0.77662945, -0.62995774, -1.06323995e-07, -0.62995774, -0.77662945, -7.4425144, 3.0716264, -7.2054973)
+current = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=504033302]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=862446666]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -38.5
+offset_right = 79.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "DAY 1"
+label_settings = SubResource("LabelSettings_ctail")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1094713808]
+libraries/ = SubResource("AnimationLibrary_wp12p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=454044201]
+root_node = NodePath("../Node3D/Camera3D")
+libraries/ = SubResource("AnimationLibrary_akv5t")
+
+[node name="PortaArea" type="Area3D" parent="." unique_id=1255699879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6536913, 0, 15.368264)
+script = ExtResource("8_wp12p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PortaArea" unique_id=699295986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07518005, 1.59552, 0.22528076)
+shape = SubResource("BoxShape3D_58myd")
+
+[connection signal="body_entered" from="PortaArea" to="PortaArea" method="_on_body_entered"]
+[connection signal="body_exited" from="PortaArea" to="PortaArea" method="_on_body_exited"]
+
+[editable path="player"]
+[editable path="porta"]
